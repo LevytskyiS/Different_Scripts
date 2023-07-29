@@ -5,12 +5,25 @@ from moviepy.editor import VideoFileClip
 
 class GetAudio:
     @staticmethod
-    def get_audio(filename: str):
+    def get_audio():
         """Extract audio from a given videofile and save it as an MP3."""
-        video = VideoFileClip(filename)
-        audio = video.audio
-        audio.write_audiofile(f"{filename.split('.')[0]}_audio_{time.time()}.mp3")
+        while True:
+            filename = input("Enter a file name including extension: ")
+
+            if filename == "q":
+                exit("Good bye!")
+
+            try:
+                video = VideoFileClip(filename)
+            except OSError as e:
+                print(
+                    f"The video file {filename} could not be found.\nPlease check that you entered the correct path."
+                )
+                continue
+
+            audio = video.audio
+            audio.write_audiofile(f"{filename.split('.')[0]}_audio_{time.time()}.mp3")
 
 
 if __name__ == "__main__":
-    GetAudio.get_audio("sasuke.mp4")
+    GetAudio.get_audio()
