@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 from moviepy.editor import VideoFileClip
 
@@ -13,16 +14,23 @@ class GetAudio:
             if filename == "q":
                 exit("Good bye!")
 
+            filename = Path(filename)
+
             try:
-                video = VideoFileClip(filename)
+                video = VideoFileClip(f"{filename}")
+            except AttributeError as e:
+                print(
+                    f"The video file {filename} could not be found.\nPlease check that you entered the correct path.\n"
+                )
+                continue
             except OSError as e:
                 print(
-                    f"The video file {filename} could not be found.\nPlease check that you entered the correct path."
+                    f"The video file {filename} could not be found.\nPlease check that you entered the correct path.\n"
                 )
                 continue
 
             audio = video.audio
-            audio.write_audiofile(f"{filename.split('.')[0]}_audio_{time.time()}.mp3")
+            audio.write_audiofile(f"{filename.stem}_audio_{time.time()}.mp3")
 
 
 if __name__ == "__main__":
