@@ -5,9 +5,6 @@ from create_tables_queries import (
     create_movies_table_query,
     create_reviewers_table_query,
     create_ratings_table_query,
-    drop_table_reviewers,
-    drop_table_movies,
-    drop_table_ratings,
 )
 
 
