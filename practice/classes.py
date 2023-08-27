@@ -6,6 +6,8 @@ class Car:
 
 
 class BMWCar(Car):
+    instances = 0
+
     def __init__(self, brand: str, speed: int):
         super().__init__(brand)
         self.speed = speed
@@ -21,5 +23,11 @@ class BMWCar(Car):
     def __str__(self) -> str:
         return f"Brand: {self.brand}, speed: {self.speed}"
 
+    @classmethod
+    def some_func(cls):
+        cls.instances += 1
+        return cls.instances
+
 
 bmw = BMWCar("BMW", 220)
+bmw_m = BMWCar("BMW M3", 235)

@@ -4,7 +4,7 @@ from models import User
 from connect import connect
 
 
-def add_user(user_id: str, first_name: str, last_name: str):
+def add_user(user_id: int, first_name: str, last_name: str) -> User | str:
     user = User.objects(user_id=user_id).first()
     if not user:
         try:

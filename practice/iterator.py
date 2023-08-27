@@ -4,7 +4,7 @@ my_list = [1, 2, 3, 4]
 # create an iterator from the list
 iterator = iter(my_list)
 
-# get first objcet of the list
+# get first object of the list
 print(next(iterator))
 
 for el in iterator:
