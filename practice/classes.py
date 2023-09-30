@@ -29,5 +29,15 @@ class BMWCar(Car):
         return cls.instances
 
 
-bmw = BMWCar("BMW", 220)
-bmw_m = BMWCar("BMW M3", 235)
+# bmw = BMWCar("BMW", 220)
+# bmw_m = BMWCar("BMW M3", 235)
+
+
+# Ensure only one instance of a class exists
+class Singleton:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance

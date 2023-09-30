@@ -13,5 +13,5 @@ class Settings(BaseSettings):
     URL: str = "url"
 
 
-# settings = Settings(_env_file="practice/postgresql/.env", _env_file_encoding="utf-8")
-settings = Settings(_env_file=".env", _env_file_encoding="utf-8")
+settings = Settings(_env_file="practice/postgresql/.env", _env_file_encoding="utf-8")
+# settings = Settings(_env_file=".env", _env_file_encoding="utf-8")
