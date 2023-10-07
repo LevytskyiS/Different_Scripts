@@ -28,3 +28,5 @@ def get_connect():
 
 
 connect = get_connect()
+
+# Docker $ docker run --name power -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -d --rm mysql
