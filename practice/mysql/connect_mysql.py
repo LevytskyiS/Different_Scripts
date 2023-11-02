@@ -29,4 +29,26 @@ def get_connect():
 
 connect = get_connect()
 
-# Docker $ docker run --name power -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -d --rm mysql
+# Docker $ docker run --name power -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -d mysql
+# --rm не нужен, чтобы не терялись внесенные измнения
+# Подключиться к серверу баз данных и посмотреть имеющиеся базы данных:
+# docker exec -it mysqlpower mysql -uroot -p
+# SHOW DATABASES;
+# exit
+# Чтобы зайти через терминал в докере, то надо прописать mysql -p12345 (12345 - это пароль, приклеенный к тегу -p)
+# Импорт конфигурации БД
+# docker exec -i mysql_instance mysql -uroot -ppassw < C:\Temp\MySQL_SampleDB.sql
+# Подключение к MySQL серверу в режиме командной строки непосредственно в контейнере
+# docker exec -it mysql_instance mysql -uroot -ppassw
+# Создание пользователя для подключения к БД
+# CREATE USER 'dba'@'localhost' IDENTIFIED BY 'dbaPass';
+# GRANT ALL PRIVILEGES ON *.* TO 'dba'@'localhost' WITH GRANT OPTION;
+# CREATE USER 'dba'@'%' IDENTIFIED BY 'dbaPass';
+# GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' WITH GRANT OPTION;
+# FLUSH PRIVILEGES;
+# exit
+# Создать соединение в DBeaver, поменять Key на True
+# Готово :)
+
+# CREATE DATABASE mydb;
+# USE mydb; - Переключение на нужную БД
