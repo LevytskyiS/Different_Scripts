@@ -6,7 +6,8 @@ iterator = iter(my_list)
 
 # get first object of the list
 print(next(iterator))
+print(next(iterator))
 
 for el in iterator:
     # выводится со второго элемента, поскольку первый был выведен ранее
-    print(el)
+    print(el, "FOR")

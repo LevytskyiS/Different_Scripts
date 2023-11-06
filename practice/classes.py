@@ -41,3 +41,32 @@ class Singleton:
         if cls._instance is None:
             cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
+
+
+# s1 = Singleton()
+# s1.port = 3000
+# s1.id = 1234
+
+
+class SomeClass:
+    def __new__(cls, *args, **kwargs):
+        instance = super().__new__(cls)
+        instance.args = args
+        instance.kwargs = kwargs
+        return instance
+
+    # def __init__(self, name):
+    #     self.name = name
+
+
+# sc1 = SomeClass(name="Mark", age=12, sex="Male")
+
+
+class Distance(float):
+    def __new__(cls, value, unit):
+        instance = super().__new__(cls, value)
+        instance.unit = unit
+        return instance
+
+
+# d1 = Distance(1, "Miles")

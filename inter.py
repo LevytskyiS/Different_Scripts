@@ -1,0 +1,87 @@
+import statistics
+from functools import lru_cache
+from collections import Counter
+
+
+# Napsat funkci v pythonu, která má proměnný počet argumentů?
+def func(*args):
+    pass
+
+
+# Napsat program, který vezme posloupnost čísel jako vstup a
+# zkontroluje, zda jsou všechna čísla jedinečná
+def check_unique_numbers(numbers: list) -> bool:
+    if len(numbers) == set(numbers):
+        return True
+    return False
+
+
+# Napsat program pro počítání počtu každého znaku daného textového souboru
+def count_signs(text: str) -> int:
+    return Counter(text)
+
+
+# Provést kontrolu palindromu nad řetězcem bez použití iterační metody
+def check_palindrom(word: str) -> bool:
+    pal = word[::-1]
+    if word == pal:
+        return True
+    return False
+
+
+def create_triangle(base: int) -> None:
+    if base % 2 == 0:
+        base += 1
+    space = 0
+
+    # version 1
+    for i in range(base, -1, -2):
+        print(" " * space, "*" * i)
+        space += 1
+
+    # version 2
+    median = statistics.median([i for i in range(1, base + 1)])
+    space = median - 1
+    for i in range(1, base + 1, 2):
+        print(" " * space, "*" * i)
+        space -= 1
+
+
+@lru_cache()
+def greetings(st):
+    print(st)
+    if len(st) == 0:
+        return
+    else:
+        greetings(st[:-1])
+
+
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+def gcd_rec(a, b):
+    min_num = min(a, b)
+    max_num = max(a, b)
+    if min_num == 0:
+        return max_num
+    elif min_num == 1:
+        return 1
+    else:
+        return gcd_rec(min_num, max_num % min_num)
+
+
+class A:
+    def __init__(self, name: str = "R") -> None:
+        self.name = name
+
+
+# a = A("K")
+# a = A()
+# print(a.name)
+# a.__setattr__("name", "C")
+# print(a.name)
+# print(a.__getattribute__("name"))
