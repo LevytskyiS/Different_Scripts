@@ -234,7 +234,52 @@ python -m myscript (without the .py suffix)
 A function is a block of organized and reusable code that performs a single-related
 action or operation.
 """
+# 60. Flask & Django
+"""
+Philosophy:
 
+Flask is a micro-framework, meaning it provides minimal functionality. 
+Flask does not have an ORM (Object Relational Mapper) built in. This allows 
+the developer more freedom in choosing their own tools.
+
+Django is a full-stack framework. Django has everything you need to start 
+a web application. Django's ORM, Admin Interface, and authentication system 
+are included out of the box.
+
+Project Structure:
+
+Flask projects tend to be smaller and less complex, with less code needed for
+the same functionality. This is because Flask provides fewer abstractions.
+
+Django projects are usually larger and more complex, as Django includes a 
+lot of functionality out of the box.
+
+Community and Ecosystem:
+
+Django has a larger and more established community. This means Django has more 
+third-party packages, libraries, and plugins available.
+
+Flask's community is smaller, but growing. The smaller community also means 
+less pre-built functionality available, but also potentially more flexibility.
+
+Learning Curve:
+
+Django has a steeper learning curve, as it has a lot more features out of the box.
+Flask has a gentler learning curve, as it requires less setup and less 
+configuration.
+
+Debugging:
+
+Flask comes with Werkzeug, a powerful debugging tool. 
+Werkzeug helps developers identify issues and errors more easily.
+
+Django also includes a built-in debugger called pdb.
+
+In summary, Flask is a good choice if you want more control and 
+a more minimalistic approach to web development. On the other hand, 
+Django is a better choice if you want a more full-featured web framework 
+that offers more out of the box.
+"""
 
 import sys
 import copy
