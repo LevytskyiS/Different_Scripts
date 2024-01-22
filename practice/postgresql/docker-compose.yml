@@ -1,0 +1,10 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: bs_db
+      POSTGRES_USER: bs_practice
+      POSTGRES_PASSWORD: 258466
+    ports:
+      - "5432:5432"

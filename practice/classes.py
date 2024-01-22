@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Car:
     def __init__(self, brand):
         # При присвоении защищенной переменной, субкласс не может к ней обратиться.
@@ -42,8 +45,13 @@ class Singleton:
             cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
 
+    def __call__(self, *args: Any, **kwds: Any) -> Any:
+        if Singleton._instance:
+            print("You already created an instance.")
 
-# s1 = Singleton()
+
+s1 = Singleton()
+
 # s1.port = 3000
 # s1.id = 1234
 
@@ -70,3 +78,19 @@ class Distance(float):
 
 
 # d1 = Distance(1, "Miles")
+
+
+class Animal:
+    def __init__(self, breed) -> None:
+        self.breed = breed
+
+
+class Cat(Animal):
+    def __init__(self, breed, name) -> None:
+        super().__init__(breed)
+        self.name = name
+
+
+c1 = Cat("Cat", "Mick")
+
+print(c1.__dict__)

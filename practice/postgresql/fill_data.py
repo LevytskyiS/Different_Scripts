@@ -18,7 +18,7 @@ def add_group():
     session.close()
 
 
-# add_group()
+add_group()
 
 
 def add_user():

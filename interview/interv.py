@@ -22,6 +22,18 @@ because it generates values on the fly.
 # 7. Definovat seznamy a n-tice?
 # 8. Vysvětlete klíčový rozdíl mezi seznamem a n-ticemi?
 # 9. Pojmenujte běžné vestavěné datové typy v pythonu?
+"""
+The bit is the most basic unit of information in computing and digital communications. 
+The name is a portmanteau of binary digit. The bit represents a logical state 
+with one of two possible values. These values are most commonly represented as 
+either "1" or "0", but other representations such as true/false, yes/no, on/off, 
+or +/− are also widely used.
+"""
+# Dict
+"""
+A dictionary in Python is an unordered collection of key-value pairs. 
+It is mutable and allows fast access to values based on their associated keys.
+"""
 # 10. Co je pass v Pythonu?
 """ 
 The pass statement in Python is a placeholder statement that does nothing. It is used as a
@@ -107,7 +119,7 @@ instead of storing them in memory. Unlike a list or a tuple, the elements of a g
 are created on the fly as they are needed. This feature allows for efficient and 
 flexible data processing, especially when dealing with large datasets.
 
-g = (x**2 for x in range(5)) - Generator expression
+g = [x**2 for x in range(5)] - Generator expression
 def squares(n): - Generator function
     for x in range(n):
         yield x**2

@@ -99,3 +99,15 @@ print("Sorted List: ", sorted_list)
 # a.__setattr__("name", "C")
 # print(a.name)
 # print(a.__getattribute__("name"))
+
+
+lst = [12, 23, 1, 23, 5, 6, 44, 66, 88, 998, 234234234]
+st = lst[0]
+for i in lst:
+    if st > i:
+        st = i
+
+
+class T:
+    def __init__(self, name) -> None:
+        self.name = name
